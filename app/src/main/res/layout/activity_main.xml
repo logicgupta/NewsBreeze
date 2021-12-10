@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    tools:context=".main.view.MainActivity">
+
+    <ImageView
+        android:id="@+id/imv_logo"
+        android:layout_width="@dimen/two_hundred_ten_dp"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginStart="@dimen/fifteen_dp"
+        android:src="@drawable/img_lg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imv_saved_btn"
+        android:layout_width="@dimen/thirty_dp"
+        android:layout_height="@dimen/thirty_dp"
+        android:layout_marginStart="@dimen/fifteen_dp"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:background="@drawable/saved_design"
+        android:src="@drawable/img_saved"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fourty_dp"
+        android:layout_marginStart="@dimen/fifteen_dp"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:background="@drawable/search_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:iconifiedByDefault="false"
+        android:visibility="gone"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imv_logo"
+        app:layout_scrollFlags="enterAlways"
+        app:queryHint="Search"
+        app:searchHintIcon="@drawable/img_search"
+        app:showAsAction="always" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/loader"
+        layout="@layout/loader_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/fifteen_dp"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/onefifty_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
